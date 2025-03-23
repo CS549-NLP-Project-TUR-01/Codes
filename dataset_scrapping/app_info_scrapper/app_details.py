@@ -13,7 +13,7 @@ import traceback
 import pandas as pd
 
 
-
+"""
 def append_game_to_xlsx(file_name, game_data):
     file_path = Path(file_name)
     
@@ -29,6 +29,27 @@ def append_game_to_xlsx(file_name, game_data):
     
     # Save the updated DataFrame to an Excel file
     df_combined.to_excel(file_path, index=False)
+
+"""
+
+def append_game_to_csv(file_name, game_data):
+    file_path = Path(file_name)
+    
+    # Convert the game data to a DataFrame
+    df_new = pd.DataFrame([game_data])
+    
+    if file_path.exists():
+        # Load existing data
+        df_existing = pd.read_csv(file_path)
+        df_combined = pd.concat([df_existing, df_new], ignore_index=True)
+    else:
+        df_combined = df_new
+    
+    # Save the updated DataFrame to an Excel file
+    df_combined.to_csv(file_path, index=False)
+
+
+
 def print_log(*args):
     print(f"[{str(datetime.now())[:-3]}] ", end="")
     print(*args)
@@ -251,7 +272,8 @@ def main():
         apps_dict[appid] = appdetails_data
 
         # get the app name, description and append to 
-        file_name = "games.xlsx"
+        #file_name = "games.xlsx"
+        file_name = "games.csv"
         all_app_ids = get_all_app_id()
 
         for appid in all_app_ids:
@@ -303,10 +325,7 @@ def main():
                     }
 
                     
-                    append_game_to_xlsx(file_name, game_data)
-
-
-                    append_game_to_xlsx(file_name, game_data)
+                    append_game_to_csv(file_name, game_data)
                     print(f"Saved: {game_data['Name']}")
             except Exception as e:
                 print(f"Error processing app {appid}: {e}")
