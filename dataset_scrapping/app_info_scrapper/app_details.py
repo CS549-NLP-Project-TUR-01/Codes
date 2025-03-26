@@ -165,13 +165,12 @@ def main():
     apps_dict_filename_prefix = 'apps_dict'
     exc_apps_filename_prefix = 'excluded_apps_list'
     error_apps_filename_prefix = 'error_apps_list'
-    apps_id_name_filename_prefix = 'apps_id_name'
 
     
     apps_dict = {}
     excluded_apps_list = []
     error_apps_list = []
-    apps_id_name = {}
+    
 
     all_app_ids = get_all_app_id()
 
