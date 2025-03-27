@@ -13,24 +13,6 @@ import traceback
 import pandas as pd
 
 
-"""
-def append_game_to_xlsx(file_name, game_data):
-    file_path = Path(file_name)
-    
-    # Convert the game data to a DataFrame
-    df_new = pd.DataFrame([game_data])
-    
-    if file_path.exists():
-        # Load existing data
-        df_existing = pd.read_excel(file_path)
-        df_combined = pd.concat([df_existing, df_new], ignore_index=True)
-    else:
-        df_combined = df_new
-    
-    # Save the updated DataFrame to an Excel file
-    df_combined.to_excel(file_path, index=False)
-
-"""
 
 def append_game_to_csv(file_name, game_data):
     file_path = Path(file_name)
@@ -277,33 +259,13 @@ def main():
 
         for appid in all_app_ids:
             try:
-                response = requests.get(f"https://store.steampowered.com/api/appdetails?appids={appid}")
+                response = requests.get(f"https://store.steampowered.com/api/appdetails?appids={appid}&l=turkish")
                 if response.status_code == 200:
                     appdetails = response.json().get(str(appid), {})
                     if not appdetails.get("success", False):
                         continue
                     
                     data = appdetails.get("data", {})
-                    """
-                    game_data = {
-                        "ID": data.get("steam_appid"),
-                        "Name": data.get("name"),
-                        "Type": data.get("type"),
-                        "Detailed Description": data.get("detailed_description"),
-                        "Price": data.get("price_overview", {}).get("final_formatted", "N/A"),
-                        "Release Date": data.get("release_date", {}).get("date", "N/A"),
-                        
-                        "Platforms": ", ".join([k for k, v in data.get("platforms", {}).items() if v]),
-                        "Developers": ", ".join(data.get("developers", [])),
-                        "Genres": ", ".join([genre["description"] for genre in data.get("genres", [])]),
-                        "Game Modes": ", ".join(data.get("categories", [])),
-                        "Features": ", ".join(data.get("features", [])),
-
-                        "System Requirements (Min.)": data.get("pc_requirements", {}).get("minimum", "N/A"),
-                        "System Requirements (Rec.)": data.get("pc_requirements", {}).get("recommended", "N/A"),
-                        "Age Rating": data.get("required_age", "N/A"),
-                        "Links": ", ".join(data.get("support_info", {}).values()),
-                    }"
                     """
                     game_data = {
                         "ID": str(data.get("steam_appid", "")),
@@ -315,7 +277,28 @@ def main():
                         "Platforms": ", ".join([str(k) for k, v in data.get("platforms", {}).items() if v]),
                         "Developers": ", ".join([str(dev) for dev in data.get("developers", [])]),
                         "Genres": ", ".join([str(genre.get("description", "N/A")) for genre in data.get("genres", [])]),
+                        "Categories": ", ".join([str(category.get("description", "N/A")) for category in data.get("categories", [])]),
+                        "Publishers": ", ".join([str(pub) for pub in data.get("publishers", [])]),
                         "Game Modes": ", ".join([str(category.get("description", "N/A")) for category in data.get("categories", [])]),
+                        "Features": ", ".join([str(feature.get("description", "N/A")) for feature in data.get("features", [])]),
+                        "System Requirements (Min.)": str(data.get("pc_requirements", {}).get("minimum", "N/A")),
+                        "System Requirements (Rec.)": str(data.get("pc_requirements", {}).get("recommended", "N/A")),
+                        "Age Rating": str(data.get("required_age", "N/A")),
+                        "Links": ", ".join([str(link) for link in data.get("support_info", {}).values()]),
+                    }
+                    """
+                    game_data = {
+                        "ID": str(data.get("steam_appid", "")),
+                        "Name": str(data.get("name", "")),
+                        "Type": str(data.get("type", "")),
+                        "Detailed Description": str(data.get("detailed_description", "")),
+                        "Price": str(data.get("price_overview", {}).get("final_formatted", "N/A")),
+                        "Release Date": str(data.get("release_date", {}).get("date", "N/A")),
+                        "Platforms": ", ".join([str(k) for k, v in data.get("platforms", {}).items() if v]),
+                        "Developers": ", ".join([str(dev) for dev in data.get("developers", [])]),
+                        "Genres": ", ".join([str(genre.get("description", "N/A")) for genre in data.get("genres", [])]),
+                        "Categories": ", ".join([str(category.get("description", "N/A")) for category in data.get("categories", [])]),
+                        "Game Modes": ", ".join([str(mode.get("description", "N/A")) for mode in data.get("categories", [])]),
                         "Features": ", ".join([str(feature.get("description", "N/A")) for feature in data.get("features", [])]),
                         "System Requirements (Min.)": str(data.get("pc_requirements", {}).get("minimum", "N/A")),
                         "System Requirements (Rec.)": str(data.get("pc_requirements", {}).get("recommended", "N/A")),
