@@ -274,27 +274,7 @@ def main():
                         continue
                     
                     data = appdetails.get("data", {})
-                    """
-                    game_data = {
-                        "ID": str(data.get("steam_appid", "")),
-                        "Name": str(data.get("name", "")),
-                        "Type": str(data.get("type", "")),
-                        "Detailed Description": str(data.get("detailed_description", "")),
-                        "Price": str(data.get("price_overview", {}).get("final_formatted", "N/A")),
-                        "Release Date": str(data.get("release_date", {}).get("date", "N/A")),
-                        "Platforms": ", ".join([str(k) for k, v in data.get("platforms", {}).items() if v]),
-                        "Developers": ", ".join([str(dev) for dev in data.get("developers", [])]),
-                        "Genres": ", ".join([str(genre.get("description", "N/A")) for genre in data.get("genres", [])]),
-                        "Categories": ", ".join([str(category.get("description", "N/A")) for category in data.get("categories", [])]),
-                        "Publishers": ", ".join([str(pub) for pub in data.get("publishers", [])]),
-                        "Game Modes": ", ".join([str(category.get("description", "N/A")) for category in data.get("categories", [])]),
-                        "Features": ", ".join([str(feature.get("description", "N/A")) for feature in data.get("features", [])]),
-                        "System Requirements (Min.)": str(data.get("pc_requirements", {}).get("minimum", "N/A")),
-                        "System Requirements (Rec.)": str(data.get("pc_requirements", {}).get("recommended", "N/A")),
-                        "Age Rating": str(data.get("required_age", "N/A")),
-                        "Links": ", ".join([str(link) for link in data.get("support_info", {}).values()]),
-                    }
-                    """
+                    
                     game_data = {
                         "ID": str(data.get("steam_appid", "")),
                         "Name": str(data.get("name", "")),
