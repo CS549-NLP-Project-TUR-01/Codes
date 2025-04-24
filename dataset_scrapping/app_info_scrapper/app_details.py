@@ -61,7 +61,6 @@ def main():
 
     print_log('Total number of apps on steam:', len(all_app_ids))
 
-     
 
     for appid in all_app_ids:
         try:
