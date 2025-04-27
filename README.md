@@ -61,4 +61,3 @@ This project focuses on scraping game details and user reviews from Steam, follo
 
 *   `dataset/cleaned_reviews*.xlsx`: Excel files containing the processed reviews. The different filenames (`cleaned_reviews.xlsx`, `cleaned_reviews_zemberek.xlsx`, etc.) likely represent different stages or versions of the cleaning and labeling process.
 *   `data_preparation/constants/`: JSON files containing keywords or rules used during the labeling phase.
-
