@@ -52,10 +52,25 @@
             "denemelisiniz", "pişman olmazsınız", "parasını hak ediyor", "helal olsun", "ellerine sağlık", "yapandan allah razı olsun","En iyisi",
             "çok iyi","EN İYİ","mukemmel","guzel","iyi"
             ,"akıcı", "dengeli", "keyif verici", "başarılı", "etkileyici", "önerilir", "sevdim", "beğendim", "tatmin edici", "kusursuz",
-            "sorunsuz", "stabil", "optimize edilmiş", "oyna", "işte", "aşığım", "çok iyi","İYİ","Oynatin","oynattirin","muq","mük","muk"
+            "sorunsuz", "stabil", "optimize edilmiş", "oyna", "işte", "aşığım", "çok iyi","İYİ","Oynatin","oynattirin","muq","mük","muk",
+            "şaheser", "fena değil", "alın", "pişman olmayacaksınız","inanılmaz", "keyif aldım", "keyif almak", "iyi","iyimis","müq", "10/10", "ÇOK İYİ",
+            "100/100", "100 de 100", "eglendiginiz", "anlatmaya gerek yok", "baya iyi", "şaheser", "daha iyisi gelmez", "eglenceli", "al", "züpper",
+            "gzl", "onda on", "yüzde yüz", "10 da 10", "daha iyisi gelmez", "daha iyisi", "daha güzeli", "daha güzeli olamaz", "muq", "öneririm", "keyifli",
+            "saran", "bağımlılık yapar", "mükkemmel", "başyapıt", "muazzam", "bitireceksin","iyisi", "eğlencelisi","+", "oynadığım en iyi", "akıyor","efsane", "efsane ötesi",
+            "süperr", "oynayın", "müqq", "müqqq", "müq", "olumlu", "kötü değil", "oyna", "tavsiye ediyorum", "zevk alıyorum", "keyif almamak imkansız", "müthiş","içine çekiyor", "mutlaka olmalı",
+            "beğenildi","guzel", "değdi", "pişman değilim", "kendine çekti", "beni kendine çekti", "bitirdim", "bitirdiğim", "çok iyi", "harika", "HARİKA", "Her kuruşunu hak ediyor", "hak ediyor",
+            "bağımlısı oldum", "değer", "buna değer", "şaheser", "SARDI", "MUHTEŞEM", "etkileyici", "OYNAYIN", "içine çekiyor", "yapmışlar", "yapmışlar adamlar","leziz", "cok leziz", 
+            "seversin", "oynama isteğin gelir", "süper", "süper oyun", "fenasal", "fevkalade", "en iyi", "EN İYİ", "BAŞYAPIT", "seni veren Allah'a kurban", "Seni veren allaha kurban",
+            "budur", "oyun budur", "pişman olmazsınız", "mück", "hakkını vermişler", "sardı", "sarıyo", "sarıyor", "gayet güzel", "çok ii","ii",
+            "tek oturuşta", "sıkılmadan", "oynadım", "alması gereken", "zaman geçirmelik", "tam zaman geçirmelik", "1'e 1", "bire bir", "1 e 1",
+            "girmelik oyun", "girmelik", "potansiyeli var", "potansiyeli fazla", "sarar", "Süper", "egelenceli" 
         ],
         "Olumsuz": [
-            "kötü", "berbat", "hatalı", "yavaş", "sıkıcı", "donuk", "zayıf", "kötücül","Bulaşmayın","SİKİCEM","çöp","kötü","almayın","kotu"
+            "kötü", "berbat", "ananı bacını", "tekrarlıyor", "kendini tekrarlıyor", "leş", "alma", "yaziklar olsun", "silme kararı alırsın", "sil", "sildim", "iade ettim",
+            "geri verdim", "yarrak gibi", "çok yavaş", "yavaş", "alınmaz", "atıyor", "boş", "boş hissettiriyor", "yok", 
+            "kaltağı yapacak", "problem", "iyi değil", "B0K", "B0K GİBİ", "BOK", "BOK GİBİ", "bok gibi", "kasıyor", "donuyor", "sıkıntı", "sikik", "yazıklar olsun",
+            "annesine saygılar", "iade", "iadeyi hak eden", "işi değil", "işten alın", "senin gibi", "hatalı", "takılmalar oluyor", "akıcı değil", 
+            "çalışmıyor", "anasını siktigin", "anasını", "siktigin","amk", "yavaş", "sıkıcı", "donuk", "zayıf", "kötücül","Bulaşmayın","SİKİCEM","çöp","kötü","almayın","kotu"
             ,"işe yaramaz", "eksik", "yetersiz", "kaba", "acımasız", "düzensiz", "hayal kırıklığı", "verimsiz","nefret","etmiyorum",
             "mutsuz", "çirkin", "fiyasko", "tatsız", "tekdüze", "vasat", "sinir bozucu", "tutarsız", "başarısız","Begenmedim",
             "kırık", "çöküyor", "dengesiz", "kafa karıştırıcı", "pişman", "iğrenç", "rezil", "kalitesiz",
@@ -140,7 +155,8 @@
             "boktan", "bok gibi", "bokgibi", "boktn", "sktr", "amnk", "amnskm", "pzevenk",
             "ibn", "kaltak", "pezo", "yavsak", "pic", "oc", "o.c.", "s.k", "s.g", "siktirbok",
             "bokgibiydi", "bokumgibi", "yarramgibi", "yarrakgibi", "götgibi", "götümgibi",
-            "serefsiz", "amk çocuğu", "oç", "amnskym", "skrm"
+            "serefsiz", "amk çocuğu", "oç", "amnskym", "skrm", "gelmişini geçmişini", "sülalesini", "kaltağı yaptı", "kaltak", "bok gibi",
+            "" 
         ]
     }
 }

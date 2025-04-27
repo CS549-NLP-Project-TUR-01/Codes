@@ -1,7 +1,7 @@
 {
     "ASPECTS_KEYWORDS": {
         "Grafik": [
-            "grafik", "görsel", "görüntü", "tasarım", "renk", "art", "doku", "estetik",
+            "grafik", "görsel", "görseller", "görüntü", "tasarım", "renk", "art", "doku", "estetik",
             "görsellik", "atmosfer", "pixel", "animasyon", "render", "vfx", "efekt",
             "gölgelendirme", "detaylı", "parlak", "canlı", "ışıklandırma", "derinlik",
             "kompozisyon", "minimal", "soyut", "modern", "klasik", "retro", "realistik",
@@ -12,7 +12,8 @@
             "arayüz tasarımı", "foto gerçekçi", "fov", "zoom", "görsel kalite", "çözünürlük",
             "texture", "kaplama", "çizim tarzı", "sanat yönetimi", "ışıklandırma kalitesi",
             "görsel efektler", "partikül efektleri", "post-processing", "anti-aliasing",
-            "ray tracing", "ışın izleme", "çözünürlük", "kaplama", "görsel stil", "sanat tasarımı", "çizimler", "görünüm", "görsel efektler"
+            "ray tracing", "ışın izleme", "çözünürlük", "kaplama", "görsel stil", "sanat tasarımı", "çizimler", "görünüm", "görsel efektler",
+            "atmosfer", "manzaraları", "sanat tasarımı", "tema", "atmosfer", "evren", "tasarım", "renkli"
         ],
 
         "AI": [
@@ -29,12 +30,13 @@
             "planlama", "öngörülebilir", "doğal tepkiler", "yapay zeka davranışı",
             "npc zekası", "düşman yapay zekası", "yoldaş yapay zekası", "pathfinding",
             "yol bulma", "akıllı düşman", "aptal düşman", "taktiksel zeka", "grup davranışı",
-            "sürü zekası", "öngörülemez", "tepkisiz", "yapay zeka zorluğu", "düşman davranışı", "akıllı npc", "yapay zeka tepkileri"
+            "sürü zekası", "öngörülemez", "tepkisiz", "yapay zeka zorluğu", "düşman davranışı", "akıllı npc", "yapay zeka tepkileri",
+            "boss savaşları"
         ],
-
+      
         "Oynanis": [
-            "oynanış", "kontrol", "mekanik", "sistem", "combo", "hikaye", "zor", "oyun","dlc",
-            "zorluk", "akış", "kontroller", "oyunu", "oyunun", "oyunlar", "zor",
+            "oynanış", "kontrol", "optimizasyon", "mekanik", "sistem", "combo", "hikaye", "zor", "oyun","dlc",
+            "zorluk", "akış", "kontroller", "oyunu", "oyunun", "oyununda", "open world", "oyunlar", "zor",
             "gerçekçi", "akıcı", "kaliteli", "tavsiye", "güzel", "iyi",
             "büyüleyici", "en iyi", "öneririm", "strateji", "refleks", "etkileşim",
             "deneyim", "gerçek zamanlı", "çoklu görev", "işbirliği", "rekabet", "dinamik",
@@ -70,7 +72,8 @@
             "hoparlör performansı", "lofi", "remix", "mod müzikleri", "ses kasma",
             "çevresel sesler", "ayak sesi", "silah sesi", "patlama sesi", "karakter seslendirmesi",
             "voice acting", "altyazı", "dublaj kalitesi", "müzik seçimi", "sound design",
-            "ses miksajı", "ses seviyesi", "gürültü", "sessizlik", "seslendirme kalitesi", "çevresel sesler", "müzik atmosferi", "ses efektleri", "dublaj"
+            "ses miksajı", "ses seviyesi", "gürültü", "sessizlik", "seslendirme kalitesi", "çevresel sesler", "müzik atmosferi", "ses efektleri", "dublaj",
+            "müzikleri"    
         ],
         "Oyun Dunyasi": [
             "dünya", "harita", "açık dünya", "dünya tasarımı", "atmosfer", "çevre",
