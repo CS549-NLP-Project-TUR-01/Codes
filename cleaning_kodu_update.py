@@ -17,12 +17,12 @@ from openpyxl.styles import PatternFill
 import time # Zamanlama için eklendi (opsiyonel)
 
 # --- Dosya Yolları ve Sabitler ---
-INPUT_PATH = r"C:\Users\emre.ozturk\Desktop\cs_project_olcay/reviews.csv"
-OUTPUT_PATH = r"C:\Users\emre.ozturk\Desktop/cleaned_reviews_zemberek_GUNCEL.xlsx"
+INPUT_PATH = r"C:\Users\alibaki.turkoz\Desktop\ÖZÜ_CS_MASTER\Semester_2\CS549_Introduction_to_Natural_Language_Processing\Group_Project\Codes\dataset\reviews.csv"
+OUTPUT_PATH = r"C:\Users\alibaki.turkoz\Desktop\ÖZÜ_CS_MASTER\Semester_2\CS549_Introduction_to_Natural_Language_Processing\Group_Project\Codes\dataset\cleaned_reviews_zemberek_GUNCEL.xlsx"
 
 # KEYWORDS
-ASPECTS_KEYWORDS_PATH = r"C:\Users\emre.ozturk\Desktop/deneme/aspects_keywords.json"
-SENTIMENT_KEYWORDS_PATH = r"C:\Users\emre.ozturk\Desktop\deneme/sentiment_keywords.json"
+ASPECTS_KEYWORDS_PATH = r"C:\Users\alibaki.turkoz\Desktop\ÖZÜ_CS_MASTER\Semester_2\CS549_Introduction_to_Natural_Language_Processing\Group_Project\Codes\data_preparation\constants\aspects_keywords_guncel.json"
+SENTIMENT_KEYWORDS_PATH = r"C:\Users\alibaki.turkoz\Desktop\ÖZÜ_CS_MASTER\Semester_2\CS549_Introduction_to_Natural_Language_Processing\Group_Project\Codes\data_preparation\constants\sentiment_keywords_guncel.json"
 # COLORS_MAP_PATH = "./constants/colors_map.py" # Doğrudan tanımlandığı için kaldırıldı
 
 # Initialize Zemberek Morphology
