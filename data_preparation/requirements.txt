@@ -1,3 +1,37 @@
+# Data manipulation
 pandas
-openpyxl
+numpy
+
+# Text preprocessing
 zemberek-python
+regex
+
+# NATURAL LANGUAGE TOOL KIT (NLTK)
+nltk
+
+
+
+
+# Traditional ML
+scikit-learn
+joblib
+
+# Hugging Face Transformers (for model training)
+transformers
+datasets
+
+# PyTorch (CPU version; change if using CUDA)
+torch
+torchaudio
+torchvision
+
+# Utility
+tqdm    
+
+# Optional: API building
+fastapi 
+uvicorn 
+
+# Visualization (if needed)
+matplotlib  
+seaborn 
