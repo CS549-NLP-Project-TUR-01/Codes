@@ -1,13 +1,13 @@
 {
     "SUFFIXES": [
 
-        "i", "ı", "u", "ü", "si", "sı", "su", "sü", "leri", "ları", "im", "ım", "um", "üm", "miz", "mız", "muz", "müz", "niz", "nız", "nuz", "nüz", "m",
+        "si", "sı", "su", "sü", "leri", "ları", "im", "ım", "um", "üm", "miz", "mız", "muz", "müz", "niz", "nız", "nuz", "nüz", "m",
 
 
-        "ler", "lar",
+        "ler", "lar", "lara", "lere", "lerim", "larım", "leriniz", "larınız", "lerimiz", "larınız",
 
 
-        "e", "a", "de", "da", "den", "dan", "ye", "ya", "ne", "na",
+        "de", "da", "den", "dan", "ye", "ya", "ne", "na",
 
 
         "nin", "nın", "nun", "nün", "lerinin", "larının", "larinin",
@@ -17,7 +17,7 @@
 
         "li", "lı", "lu", "lü", "siz", "sız", "suz", "süz",
 
-        "lik", "lık", "luk", "lük", "ci", "cı", "cu", "cü", "ca", "ça", "ce", "çe", "ik", "ık", "uk", "ük", "ek", "ak",
+        "lik", "lık", "luk", "lük", "ci", "cı", "cu", "cü", "ca", "ça", "ce", "çe",
 
 
         "deki", "daki", "ki",

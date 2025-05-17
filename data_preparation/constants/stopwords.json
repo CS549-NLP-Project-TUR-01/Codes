@@ -1,0 +1,19 @@
+{
+    "TURKISH_STOPWORDS": [
+        "ve", "bir", "bu", "için", "ile", "de", "da", "ne", "mi", "en", "çok", "o", "ki", "ama", "gibi", "daha", "ya",
+        "ben", "sen", "biz", "siz", "onlar", "onun", "bunun", "şu", "şey", "her", "şimdi", "sonra", "önce", "yani",
+        "nasıl", "neden", "acaba", "altı", "altmış", "ancak", "arada", "aslında", "ayrıca", "az", "bazı", "belki",
+        "benim", "beri", "beş", "bin", "biraz", "biri", "birkaç", "birşey", "bizim", "böyle", "bütün", "çoğu", "çoğunu",
+        "çünkü", "dört", "eğer", "elli", "gene", "gerek", "göre", "halen", "hangi", "hatta", "hem", "henüz", "hep",
+        "hepsi", "herhangi", "hiç", "hiçbir", "iken", "iki", "ikinci", "ise", "itibaren", "itiraz", "kadar", "karşın",
+        "katrilyon", "kendi", "kendine", "kendini", "kez", "kime", "kimi", "kimin", "kaç", "kere", "kırk", "mı", "mıydı",
+        "mıyız", "milyar", "milyon", "mu", "muydu", "muyuz", "nasılsa", "ne kadar", "nerede", "nereden", "neresi", "nereye",
+        "niçin", "niye", "on", "ona", "ondan", "onları", "onların", "onu", "orada", "oysa", "pek", "rağmen", "sanki",
+        "sekiz", "seksen", "senin", "senden", "seni", "seninle", "sizden", "sizi", "sizin", "son", "sonraki", "şayet",
+        "şeyler", "şimdiye", "şu an", "şunlar", "şunu", "şurada", "şundan", "şunları", "şunların", "ta", "tabii", "tamam",
+        "tarafından", "tek", "tekrar", "tüm", "üç", "üzere", "var", "vardı", "var mı", "varsa", "yedi", "yetmiş", "yine",
+        "yirmi", "yok", "yoksa", "yüz", "zaten", "zira", "üzere", "üstelik", "öyle", "öteki", "öyleki",
+
+        "bazen", "bazıları", "bazı", "bütün", "birçok", "birkaçı", "birkaç"
+    ]
+}
