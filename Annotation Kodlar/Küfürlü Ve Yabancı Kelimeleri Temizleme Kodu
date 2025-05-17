@@ -1,0 +1,167 @@
+import pandas as pd
+from langdetect import detect, DetectorFactory
+import re
+import numpy as np
+
+
+# Langdetect sonuçlarının tutarlılığı için tohum ayarı
+DetectorFactory.seed = 0
+
+
+# Dosya yolları
+INPUT_PATH = r"C:\Users\alibaki.turkoz\Desktop\CS549_Project\Games_Rewievs_Dataset_Excel.xlsx"
+OUTPUT_PATH = r"C:\Users\alibaki.turkoz\Desktop\CS549_Project\Games_Rewievs_Cleaned.xlsx"
+
+
+# Küfür kelimelerinin listesi – ihtiyacınıza göre güncelleyebilirsiniz
+swear_words = [
+    "amk", "aq", "siktir", "orospu", "kahpe", "mk", "amq", "sex", "sikiş", "seks", "penis", "cinsel", "S3KS", "s3ks", "aw", "skrm"
+    "yarak", "yarrak", "yarram", "ana", "anası", "bacısı", "bacı", "amına", "best", "kinda", "play", "fucking", "fuck", "week", "end", "good"
+    "piç", "yarrak", "orospu çocuğu", "sik", "sikeyim", "game", "souls", "Unbelievable", "nice", "Good Boy", "S.kş", "great", "GOAT", "WE", "BETTER", 
+    "NOW", "WE BETTER NOW", "perfect", "good", "nice", "absolute" ,"cinema", "perfect", "Masterpiece", "comment","no", "yes", "died","masterpiece", "joke", 
+    "am","yarak","love", "good","skrm","amazing","PERFECTİON", "it","love","meme","open","door","this","thıs","one", "WE","amınoğlu","aminoglu","amınoglu",
+    "taşşak","tassak","dope","kürd","31","manita","mission","recommend","recommande","porno","porn","checkpoint" 
+]
+
+
+swear_pattern = re.compile("|".join(map(re.escape, swear_words)), re.IGNORECASE)
+
+
+def is_malformed_review(text):
+    """
+    Virgülle ayrılmış tokenlara bakıp, tokenların ağırlıklı olarak (%80'den fazlası)
+    sayısal/boolean içerik sunması durumunda hatalı veri olarak kabul eder.
+    """
+    if not isinstance(text, str):
+        return False
+    tokens = [t.strip() for t in text.split(',') if t.strip() != '']
+    if len(tokens) < 2:
+        return False
+    count_num_bool = 0
+    for t in tokens:
+        # Tam sayı, ondalık sayı veya "True"/"False" kontrolü
+        if t.isdigit() or t in ["True", "False"]:
+            count_num_bool += 1
+        else:
+            try:
+                float(t)
+                count_num_bool += 1
+            except Exception:
+                continue
+    if len(tokens) > 0 and (count_num_bool / len(tokens)) > 0.8:
+        return True
+    return False
+
+
+def should_remove(review):
+    """
+    Review (yorum) metnini aşağıdaki durumlara göre kontrol eder:
+      - String değilse (örneğin NaN ise)
+      - Yorum yalnızca nokta, iki nokta üst üste, :* gibi noktalama sembolleri veya boşluklardan oluşuyorsa
+      - Tanımlı küfürlerden birini içeriyorsa
+      - Dil tespitinde İngilizce ise
+      - Yorum sistematik olarak hatalı (ör. virgülle ayrılmış sayısal/boolean değerlerden oluşuyorsa)
+      - Veya 4 veya daha fazla aynı harf art arda tekrarlanıyorsa
+      - **Ek olarak:**
+          * Yorum yalnızca tek harften oluşuyorsa
+          * Yorumda "<3" ifadesi geçiyorsa
+    Bu şartlardan herhangi biri sağlanırsa True döndürerek satırın tamamen kaldırılmasını sağlar.
+    """
+    if not isinstance(review, str):
+        return True  # String değilse, örneğin NaN ise satırı kaldır.
+
+
+    # Eğer yorumda herhangi bir gerçek kelime yoksa (yani sadece noktalama veya boşluk varsa)
+    if not re.search(r'\w', review):
+        return True
+
+
+    # Eğer yorum sadece tek bir harf içeriyorsa, kaldır.
+    if len(review.strip()) == 1:
+        return True
+
+
+    # Eğer yorumda "<3" varsa, kaldır.
+    if "<3" in review:
+        return True
+
+
+    if is_malformed_review(review):
+        return True
+
+
+    if swear_pattern.search(review):
+        return True
+
+
+    try:
+        if detect(review) == "en":
+            return True
+    except Exception:
+        return False
+
+
+    # Eğer yorumda 4 veya daha fazla aynı harf art arda bulunuyorsa, satırı kaldır.
+    if re.search(r'([A-Za-z])\1\1\1', review):
+        return True
+
+
+    return False
+
+
+def determine_review_column(df):
+    """
+    Dosyada "review_text" adlı sütun varsa onu kullanır.
+    Aksi halde, ilk sütun id olarak alınır, geriye kalan sütunlardan
+    ortalama karakter sayısı en yüksek olanı yorum sütunu olarak belirlenir.
+    """
+    if "review_text" in df.columns:
+        return "review_text"
+    else:
+        candidate_cols = df.columns[1:]
+        best_col = None
+        best_avg_len = -1
+        for col in candidate_cols:
+            if df[col].dtype == np.object_ or df[col].dtype == 'object':
+                avg = df[col].dropna().astype(str).apply(len).mean()
+                if avg > best_avg_len:
+                    best_avg_len = avg
+                    best_col = col
+        return best_col
+
+
+# Excel dosyasını oku
+df = pd.read_excel(INPUT_PATH)
+
+
+# Eğer sütun isimleri mevcutsa:
+if "app_id" in df.columns:
+    id_col = "app_id"
+else:
+    id_col = df.columns[0]
+
+
+# Yorum sütununu belirle
+review_col = determine_review_column(df)
+
+
+# Sadece iki sütun seç: id ve review
+df = df[[id_col, review_col]].copy()
+df.columns = ["app_id", "review_text"]
+
+
+# review_text sütununda NaN olan satırları kaldır
+df = df.dropna(subset=["review_text"])
+
+
+# Belirlenen koşullara göre istenmeyen satırları kaldır (satırın tamamı atılacak)
+df_cleaned = df[~df["review_text"].apply(should_remove)].copy()
+
+
+# Temizlik: review_text başı ve sonundaki boşlukları temizle
+df_cleaned["review_text"] = df_cleaned["review_text"].astype(str).str.strip()
+
+
+# Temiz veriyi yalnızca 2 sütun içerecek şekilde Excel dosyasına kaydet
+df_cleaned.to_excel(OUTPUT_PATH, index=False)
+print("Temizleme işlemi tamamlandı. Dosya kaydedildi:", OUTPUT_PATH)
